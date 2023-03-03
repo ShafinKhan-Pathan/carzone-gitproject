@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5&j1d^dvfd(gnmi8s@_6*hnm@c*orf*_ydnod7qc)vuf-oo(^q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -89,15 +90,19 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'car_zone_database',
-        'USER': 'postgres',
-        'PASSWORD': '786',
-        'HOST':'localhost',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'car_zone_database',
+#        'USER': 'postgres',
+#        'PASSWORD': '786',
+#        'HOST':'localhost',
+#    }
+#}
+
+# Now We import the dj_database_url We have to write this line for the database.
+ DATABASES = {'default':dj_database_url.config(default='postgres://postgres:786@localhost/car_zone_database')}
+
 
 
 # Password validation
@@ -160,3 +165,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'shafinkhanpathan2002@gmail.com'
 EMAIL_HOST_PASSWORD = 'lixkwmemosuwmwwx'
 EMAIL_USE_TLS = True
+
+
+# White noice DJANGO_SETTINGS_MODULE
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
