@@ -91,7 +91,7 @@ def search(request):
         'city_search':city_search,
         'year_search' :year_search,
         'body_style_search':body_style_search,
-        'transmission_search':transmission_search,
+
 
     }
     return render(request , 'cars/search.html',data)

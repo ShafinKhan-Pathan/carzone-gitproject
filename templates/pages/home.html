@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 <!-- Main header end -->
+{% block title %} | Home {% endblock %}
 {% block content %}
 {% load humanize %}
 {% load static %}
@@ -109,7 +110,7 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Featured <span>Cars</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p><h5>Our featured cars section showcases some of the best vehicles in our inventory.</h5></p>
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
@@ -200,7 +201,7 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Latest <span>Cars</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p><h5>Our latest cars section showcases the newest arrivals to our inventory.</h5></p>
         </div>
         <div class="row">
           {% for i in all_car %}
@@ -293,7 +294,7 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Executive <span>Team</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <p><h5>Each member of our executive team brings a unique set of skills and perspectives to the table.</h5></p>
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
@@ -302,7 +303,7 @@
                 <div class="slick-slide-item">
                     <div class="team-1">
                         <div class="photo">
-                            <a href="#">
+                            <a href="{% url 'contact' %}">
                                 <img src="{{i.photo.url}}" alt="team-1" class="img-fluid">
                             </a>
                             <div class="social-list clearfix">
@@ -312,7 +313,7 @@
                             </div>
                         </div>
                         <div class="details">
-                            <h4><a href="team-detail.html">{{i.first_name}} {{i.last_name}}</a></h4>
+                            <h4><a href="{% url 'contact' %}">{{i.first_name}} {{i.last_name}}</a></h4>
                             <h5>{{i.designation}}</h5>
                         </div>
                     </div>

@@ -1,8 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Team
 from cars.models import Car
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
+from django.contrib import messages
+#from django.contrib.auth.decorators import login_required
 # Create your views here.
-
+# If You want To not open Your Home Page You should have to do this
+# @login_required(login_url = 'login')
 def home(request):
     teams = Team.objects.all()
     featured_car = Car.objects.order_by('-created_date').filter(is_featured=True)
@@ -14,7 +19,7 @@ def home(request):
     city_search = Car.objects.values_list('city', flat=True).distinct()
     year_search = Car.objects.values_list('year' , flat=True).distinct()
     body_style_search = Car.objects.values_list('body_style', flat = True).distinct()
-    
+
 
     data = {
         'teams':teams,
@@ -37,6 +42,35 @@ def about(request):
     return render(request,'pages/about.html', data)
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        phone = request.POST['phone']
+        message = request.POST['message']
+
+        email_message = 'You Have A New Message From Car Zone Check It'
+        message_body = 'name :' +name+ ', email :' +email+ ', subject :' +subject+ ', phone :' +phone+ ' ,message :' +message
+
+        admin_info = User.objects.get(is_superuser = True)
+        admin_email = admin_info.email
+
+
+        send_mail(
+            subject,
+            message_body,
+            'shafinkhanpathan2002@gmail.com',
+            [admin_email],
+            fail_silently=False,
+        )
+
+        messages.success(request,'Thank You For Contact Us We Will Get Back To You Shortly .')
+
+        return redirect('contact')
+
+
+
+
     return render(request , 'pages/contact.html')
 
 def services(request):

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block title %} | Search Results {% endblock %}
 {% block content %}
 
 
@@ -95,8 +95,8 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>Here's your <span>Cars</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h1>Here's your <span>Searched Cars</span></h1>
+
         </div>
         <div class="row">
           {% for i in cars %}
