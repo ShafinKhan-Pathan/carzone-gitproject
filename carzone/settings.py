@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 #}
 
 # Now We import the dj_database_url We have to write this line for the database.
- DATABASES = {'default':dj_database_url.config(default='postgres://postgres:786@localhost/car_zone_database')}
+DATABASES = {'default':dj_database_url.config(default='postgres://postgres:786@localhost/car_zone_database')}
 
 
 
