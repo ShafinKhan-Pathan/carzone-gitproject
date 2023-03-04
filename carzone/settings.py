@@ -26,7 +26,7 @@ SECRET_KEY = '5&j1d^dvfd(gnmi8s@_6*hnm@c*orf*_ydnod7qc)vuf-oo(^q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['desolate-peak-61666.herokuapp.com']
+ALLOWED_HOSTS = ['desolate-peak-61666.herokuapp.com',]
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
