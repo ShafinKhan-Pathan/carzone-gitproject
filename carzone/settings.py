@@ -48,10 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
+    # 'allauth.socialaccount',
     #PROVIDER
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.google',
 
 
 ]
@@ -87,6 +87,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'carzone.wsgi.application'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -163,8 +164,8 @@ SITE_ID = 1
 # Email Sending
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'shafinkhanpathan2002@gmail.com'
-EMAIL_HOST_PASSWORD = 'lixkwmemosuwmwwx'
+EMAIL_HOST_USER = 'testingprojectdjango@gmail.com'
+EMAIL_HOST_PASSWORD = 'ebfkirzhkhfwpgbh'
 EMAIL_USE_TLS = True
 
 
