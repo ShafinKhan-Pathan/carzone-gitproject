@@ -33,7 +33,7 @@
                         <div class="car-box-3">
                             <div class="car-thumbnail">
                                 <a href="{% url 'car_details' i.id %}" class="car-img">
-                                    <div class="tag">For Rent</div>
+                                    <div class="tag">For Sale</div>
                                     <div class="price-box">
                                         <span>$ {{i.price | intcomma}}</span>
                                     </div>
@@ -83,7 +83,7 @@
                                 </div>
                                 <ul class="facilities-list clearfix">
                                     <li>{{i.fuel_type}}</li>
-                                    <li>{{i.miles | intcomma}}</li>
+                                    <li>{{i.miles | intcomma}} miles</li>
                                     <li>{{i.transmission}}</li>
                                     <li>{{i.body_style}}</li>
                                     <li>{{i.color}}</li>

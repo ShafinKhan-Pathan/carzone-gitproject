@@ -80,7 +80,7 @@ def search(request):
         min_price = request.GET['min_price']
         max_price = request.GET['max_price']
         if max_price:
-            cars =cars.filter(price__gte=min_price , price__lte=max_price)
+            cars = cars.filter(price__gte=min_price , price__lte=max_price)
 
 
 
